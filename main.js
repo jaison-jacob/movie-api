@@ -8,7 +8,13 @@ const PORT = 6969;
 app.get("/", (req, res) => {
   res.json({ msg: "hello new msg" });
 });
+// data understanding middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Db connection
 connectDb();
+
 app.use("/", MoviesRoutes);
 
 app.listen(PORT, () => {

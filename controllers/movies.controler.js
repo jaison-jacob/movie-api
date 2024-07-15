@@ -3,7 +3,11 @@ export const getmoviesList = (req, res) => {
 };
 
 export const createMovies = (req, res) => {
-  res.send("hello get output");
+  //   res.send("hello get output");
+
+  console.log(req.body);
+
+  return res.json(req.body);
 };
 
 export const updateMovies = (req, res) => {
